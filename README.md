@@ -10,9 +10,9 @@ Ce projet fut conçu purement en [python](https://www.python.org/). Modules prin
 -
 
 ## Fontionnalités Implementées 🗒 
-- Nouveau
-- Ouvrir
-- Enregistrer/Enregistrer Sous
+- Nouveau  
+- Ouvrir 
+- Enregistrer/Enregistrer Sous 
 - Ajout de police, alignement de texte, couleur
 
 ### Suggestions d'ameliorations et Bugs 🤔 

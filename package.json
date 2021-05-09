@@ -2,6 +2,11 @@
   "name": "texted_vers_1",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "ofceab <flutternow1963@gmail.com>",
+  "author": "ofceab <flutternow1963@gmail.com>/ SIProgramming",
+  "scripts": {
+    "start": "python boot.py",
+    "build:release":"",
+    "build:pre-release":""
+  },
   "license": "MIT"
 }
