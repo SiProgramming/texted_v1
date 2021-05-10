@@ -4,12 +4,14 @@
 '''
 import os
 import tkinter
+from tkinter import * 
 
 
 class EditorActionsMethods:
 
     def __init__(self):
         super().__init__()
+        self._text_indice=0 # Indice de formatage 
 
     def changer_police_taille(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
         ''' Cette methode permet de changer la police d'un texte '''
@@ -56,6 +58,74 @@ class EditorActionsMethods:
                 zone_texte.tag_add("underline", "sel.first", "sel.last")
         except:
             None
+
+    def colorier_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+        ''' Permet de colorier un texte '''
+        try:
+            color_var =tkinter.colorchooser.askcolor()
+            content="format"+str(self._text_indice)
+            zone_texte.tag_add(content,"sel.first","sel.last")
+            zone_texte.tag_config(content,foreground=color_var[1])
+            self._text_indice+=1
+        except:
+            None
+
+
+    def ouvrir_fichier(self,zone_texte:tkinter.Text):
+        fichier_ouvert=tkinter.filedialog.askopenfilename(title="OUVRIR...")
+        tmp=''
+        # je dois fermer la zone de texte pendant la saisie
+        if fichier_ouvert=='' or fichier_ouvert==None:
+            None
+        else:
+            try :
+                zone_texte.delete("1.0","end")
+                fic=open(fichier_ouvert,'r',encoding='utf8')
+                tmp=fic.readline()
+                j=1.0
+                #self.fenetre.quit
+                while(tmp!=''):
+                    zone_texte.insert(j,tmp)
+                    tmp=fic.readline()
+                    j=j+1
+                fic.close()
+            except :
+                tkinter.messagebox.showerror("ERREUR","Mauvais format de document...!")
+
+
+    def cacher_afficher_statusbar(self,zone_texte:tkinter.Text,barre_status:tkinter.Text,scroll_barre_vertical:tkinter.Scrollbar):
+        ''' Permet de cacher et afficher la barre des status '''
+        #TODO
+        if barre_status: # doit etre un boolean
+            barre_status.pack_forget()
+            scroll_barre_vertical.pack(side=RIGHT, fill=Y)
+            show_statusbar =False
+        else:
+            barre_status.pack_forget()
+            scroll_barre_vertical.pack_forget()
+            barre_status.pack(side=BOTTOM)
+            scroll_barre_vertical.pack(side=RIGHT, fill=Y)
+            barre_status.pack(fill=BOTH,expand =True)
+            show_statusbar=True       
+
+
+    def cacher_afficher_toolbar(self,zone_texte:tkinter.Text,barre_status:tkinter.Text,scroll_barre_vertical:tkinter.Scrollbar):
+        ''' Permet de cacher et afficher la barre des status '''
+        #TODO
+        if barre_status:
+            barre_status.pack_forget()
+            scroll_barre_vertical.pack(side=RIGHT, fill=Y)
+            show_toolbar =False
+
+        else:
+            barre_status.pack_forget()
+            scroll_barre_vertical.pack_forget()
+            barre_status.pack(side=TOP,fill=X)
+            scroll_barre_vertical.pack(side=RIGHT, fill=Y)
+            barre_status.pack(fill=BOTH,expand =True)
+            barre_status.pack(side=BOTTOM)
+            show_toolbar = True 
+
 
     def barrer_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
         ''' Cette methode permet de barrer un texte '''
@@ -113,3 +183,7 @@ class EditorActionsMethods:
     def nouveau_espace(self):
         ''' Pour ouvrir une autre instance de l'editeur '''
         os.popen("python Autre.py")
+
+    def fermer_fenetre(self,window:tkinter.Tk):
+        ''' Pour fermer la fenetre '''
+        window.destroy()
