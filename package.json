@@ -1,0 +1,13 @@
+{
+  "name": "texted_app_version1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Abraham Obed <65366889+ofceab@users.noreply.github.com>",
+  "scripts": {
+    "start":"python index.py",
+    "build":"pyinstaller index.py --icon=logo.ico  --noconsole --onefile --name TextEd",
+    "clear":"rm build dist",
+    "clear-file":"rm TextEd.spec"
+  },
+  "license": "MIT"
+}
