@@ -2,39 +2,88 @@
     "editor_style_actions":[
         {
             "name":"bold",
-            "command":"",
-            "icon":"bold-button.png"
+            "command":"mettre_en_gras",
+            "icon":"bold-button.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":0,
+                "column":1,
+                "padx":5,
+                "pady":5
+            }
         },
         {
             "name":"italic",
-            "command":"",
-            "icon":"italic-button.png"
+            "command":"italique",
+            "icon":"italic-button.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":0,
+                "column":2,
+                "padx":5,
+                "pady":5
+            }
 
         },
         {
             "name":"underline",
-            "command":"",
-            "icon":""
+            "command":"souligner",
+            "icon":"notepad-with-text-lines.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":1,
+                "column":1,
+                "padx":5,
+                "pady":5
+            }
         },
         {
             "name":"barrer",
-            "command":"",
-            "icon":""
+            "command":"barrer_texte",
+            "icon":"notepad-with-text-lines.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":1,
+                "column":2,
+                "padx":5,
+                "pady":5
+            }
         },
         {
             "name":"align-left",
             "command":"",
-            "icon":"notepad-with-text-lines.png"
+            "icon":"notepad-with-text-lines.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":0,
+                "column":3,
+                "padx":5,
+                "pady":5
+            }
         },
         {
             "name":"align-right",
             "command":"",
-            "icon":""
+            "icon":"notepad-with-text-lines.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":0,
+                "column":4,
+                "padx":5,
+                "pady":5
+            }
         },
         {
             "name":"align-center",
             "command":"",
-            "icon":""
+            "icon":"notepad-with-text-lines.png",
+            "type":"icon_btn",
+            "coord":{
+                "row":0,
+                "column":5,
+                "padx":5,
+                "pady":5
+            }
         }
     ],
     "menu_bar_action":[
@@ -43,39 +92,39 @@
             "sub_actions":[
                 {
                     "name":"nouveau",
-                    "icon":"",
+                    "icon":"store-files.png",
                     "command":"nouveau_espace",
-                    "type":""
+                    "type":"btn"
                 },
                 {
                     "name":"ouvrir",
                     "icon":"store-files.png",
                     "command":"ouvrir_fichier",
-                    "type":""
+                    "type":"btn"
                 },
                 {
                     "name":"enregistrer",
-                    "icon":"",
+                    "icon":"store-files.png",
                     "command":"enregister_sous",
-                    "type":""
+                    "type":"btn"
                 },
                 {
                     "name":"enregistrer sous",
-                    "icon":"",
+                    "icon":"store-files.png",
                     "command":"enregister_sous",
-                    "type":""
+                    "type":"btn"
                 },
                 {
                     "name":"imprimer",
                     "icon":"printing-archive.png",
                     "command":"imprimer",
-                    "type":""
+                    "type":"btn"
                 },
                 {
                     "name":"quitter",
-                    "icon":"",
+                    "icon":"store-files.png",
                     "command":"fermer_fenetre",
-                    "type":""
+                    "type":"btn"
                 }
                 
             ]
@@ -86,13 +135,13 @@
                 {
                     "name":"afficher la barre d'outils",
                     "icon":"",
-                    "type":"",
+                    "type":"checkbox",
                     "command":"cacher_afficher_toolbar"
                 },
                 {
                     "name":"afficher la barre des status",
                     "icon":"",
-                    "type":"",
+                    "type":"checkbox",
                     "command":"cacher_afficher_statusbar"
                 }
             ]
@@ -103,7 +152,7 @@
                 {
                     "name":"light",
                     "icon":"",
-                    "type":"",
+                    "type":"btn",
                     "command":""
                 },
                 {

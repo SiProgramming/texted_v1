@@ -16,7 +16,7 @@ class PathUtils:
     
     @staticmethod
     def obtenir_icon_path(icon_name:str):
-        return os.path.join(os.getcwd(),icon_name)
+        return os.path.join(os.getcwd(),"assets","icons",icon_name)
     
     @staticmethod
     def obtenir_logo_path():

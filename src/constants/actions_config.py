@@ -4,10 +4,12 @@
 '''
 import json
 import os
-from utils.path_utils import PathUtils
+import sys
+from src.utils.path_utils import PathUtils
 
 
-class AppActionsConfig:
+
+class ActionConfig:
 
     def __init__(self):
         ''' Initialiser toute les configurations de l'application 
@@ -18,14 +20,12 @@ class AppActionsConfig:
         self.__configs__=json.load(__json_config_file__)
 
 
-    def obtenir_editor_style_actions(self):
+    def obtenir_editor_style_actions_config(self):
         ''' Obtenir les configurations relatives a la stylisation '''
         return self.__configs__['editor_style_actions']
 
 
-    def obtenir_menu_bar_action(self):
+    def obtenir_menu_bar_action_config(self):
         ''' Obtenir les configurations relatives a la barre de menu '''
         return self.__configs__['menu_bar_action']
     
-te=AppActionsConfig()
-print(te.__configs__)

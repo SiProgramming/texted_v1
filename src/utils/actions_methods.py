@@ -10,14 +10,15 @@ from tkinter import *
 class EditorActionsMethods:
 
     def __init__(self):
+        ''' Cette classe defini toute les fonctions utiliser dans l'application, ex: gras, quitter, nouveau '''
         super().__init__()
         self._text_indice=0 # Indice de formatage 
-
-    def changer_police_taille(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    #doit etre un combox
+    def changer_police_taille(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet de changer la police d'un texte '''
         zone_texte.config(font=(font_family, texte_police.get()))
 
-    def mettre_en_gras(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def mettre_en_gras(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet de mettre un texte en gras '''
         bold_font = tkinter.Font(zone_texte, zone_texte.cget("font"))
         bold_font.configure(weight="bold")
@@ -31,7 +32,7 @@ class EditorActionsMethods:
         except:
             None
 
-    def italique(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def italique(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet de mettre un texte en italic '''
         italic_font = tkinter.Font(zone_texte, zone_texte.cget("font"))
         italic_font.configure(slant="italic")
@@ -45,7 +46,7 @@ class EditorActionsMethods:
         except:
             None
 
-    def souligner(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def souligner(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet de souligner un texte '''
         underline_font = tkinter.Font(zone_texte, zone_texte.cget("font"))
         zone_texte.configure(underline=True)
@@ -59,7 +60,7 @@ class EditorActionsMethods:
         except:
             None
 
-    def colorier_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def colorier_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Permet de colorier un texte '''
         try:
             color_var =tkinter.colorchooser.askcolor()
@@ -127,7 +128,7 @@ class EditorActionsMethods:
             show_toolbar = True 
 
 
-    def barrer_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def barrer_texte(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet de barrer un texte '''
         text_font = tkinter.Font(zone_texte, zone_texte.cget("font"))
         text_font.configure(overstrike=True)
@@ -147,7 +148,7 @@ class EditorActionsMethods:
         # TODO
         return None
 
-    def enregister_sous(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police: tkinter.Combobox):
+    def enregister_sous(self, zone_texte: tkinter.Text, font_family: tkinter.StringVar, texte_police):
         ''' Cette methode permet d'enregistrer un document '''
         # je cree une boite de dialogue dans
         # TODO
